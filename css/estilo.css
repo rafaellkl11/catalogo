@@ -1,0 +1,81 @@
+header{
+    display: flex;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(194, 194, 194);
+    border-bottom: 4px solid ;
+    border-image: linear-gradient(to right, orange, rgb(255, 189, 66)) 1;
+}
+h1{
+    color: white;
+    background-color: orange;
+    border: 15px solid orange;
+    border-radius: 1000px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+span{
+    color: black
+}
+ul{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 20em;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: orange;
+    background-color: white;
+    padding: 7px;
+    border-radius: 100px;
+    border: 2px solid rgb(116, 116, 116)
+}
+input, button{
+    border-radius: 10px;
+    border: 2px solid rgb(116, 116, 116);
+}
+button{
+    color:white;
+    background-color: orange;
+}
+
+main{
+    margin: auto;
+    margin-top: 104px;
+    margin-bottom: 0px;
+    width: 800px;
+    height: 88vh;
+    background: rgb(255, 255, 255);
+}
+#catalogo{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    border: 2px solid rgb(158, 158, 158);
+    border-radius: 5px;
+    height: 92%;
+}
+div {
+    border-bottom: 1px solid grey;
+    height: 100%;
+    display: flex;
+}
+div img{
+    margin-top: 5px;
+    margin-left: 5px ;
+    height: 12vh;
+    width: 21vh;
+}
+.sobre{
+    margin-left: 5px;
+    border: 1px solid green;
+}
+#final{
+    margin-bottom: px;
+}
