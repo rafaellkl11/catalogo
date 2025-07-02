@@ -60,8 +60,11 @@ function antPagina(){
 }
 function abrirModal() {
     document.getElementById("fundo").style.display = "flex";
-    }
+}
 
 function fecharModal() {
+    document.getElementById("fundo").style.display = "none";
+}
+function adicionar(){
     document.getElementById("fundo").style.display = "none";
 }
