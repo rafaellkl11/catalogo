@@ -1,0 +1,10 @@
+{
+  "img": ["img/download.jpeg","img/images.jpeg","img/206.jpeg","img/palio wk.webp","img/prisma.jpeg","img/tera.jpeg","img/uno.jpeg","img/corsa.jpg"],
+  "nome": ["Gol", "Gol", "206", "Palio Weekend", "Prisma", "Tera", "Uno","Corsa"],
+  "marca": ["Volkswagen", "Volkswagen", "Peugeot", "FIAT", "Chevrolet", "Volkswagen", "FIAT","Chevrolet"],
+  "versao": ["Power", "GTI", "1.6", "Adventure", "LTZ", "Highline", "Mille Economy","Maxx"],
+  "cor": ["Prata", "Azul", "Prata", "Verde", "Azul", "Branco", "Cinza","Dourado"],
+  "ano": ["2011", "1991", "2004", "2014", "2018", "2025", "2008","2009"],
+  "motor": ["1.0", "2.0", "1.6", "1.8", "1.4", "1.0T", "1.0", "1.4"],
+  "cambio": ["Manual", "Manual", "Manual", "Automatizado", "Manual", "Automatica", "Manual", "Manual"]
+}

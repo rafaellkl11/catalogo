@@ -64,7 +64,7 @@ main{
     border-radius: 5px;
     height: 92%;
 }
-div {
+.item{
     border-bottom: 1px solid grey;
     height: 100%;
     display: flex;
@@ -74,6 +74,7 @@ div img{
     margin-left: 5px ;
     height: 12vh;
     width: 21vh;
+    border-radius: 5px;
 }
 .sobre{
     flex-direction: column;
@@ -97,4 +98,44 @@ div img{
 }
 .navPag{
     margin: 5px;
+}
+.fundo{
+    display: none; 
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    justify-content: center;
+    align-items: center;
+}
+.modal{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    position: relative;
+    line-height: 0px;
+}
+#imgAdd{
+    width: 200px;
+    height: 200px;
+}
+#add{
+    margin-top: 10px;
+    padding: 5px;
+}
+#sair{
+    display: flex;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: red;
+    font-size: 20px;
+    border: red;
+    border-radius: 1000px;
 }

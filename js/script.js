@@ -1,271 +1,67 @@
-let img = ["img/download.jpeg", "img/images.jpeg","img/206.jpeg","img/palio wk.webp", "img/prisma.jpeg","img/tera.jpeg","img/uno.jpeg"];
-let nome = ["Gol", "Gol", "206", "Palio Weekend","Prisma", "Tera", "Uno"] 
-let marca = ["Volkswagen", "Volkswagen", "Peugeot", "FIAT", "Chevrolet", "Volkswagen"] 
-let versao = ["Power", "GTI", "1.6", "Adventure","LTZ", "Highline"]
-let cor = ["Prata","Azul","Prata","Verde", "Azul","Branco"]
-let ano = ["2011", "1991","2004", "2014","2018", "2025"]
-let motor = ["1.0", "2.0", "1.6", "1.8", "1.4", "1.0T"]
-let cambio = ["Manual", "Manual","Manual", "Automatizado", "Manual", "Automatica"]
 
 var n = 0;
 
 function elementos(){
-    for(let i = -1; i <= 6; i++){
-        let j = (i+1).toString();
-        const imgs1 = document.querySelector("#item"+j+" img")
-        const h2s1 = document.querySelector("#item"+j+" h2")
-        const marca1 = document.querySelector("#item"+j+" .marca ")
-        const versao1 = document.querySelector("#item"+j+" .versao ")
-        const cor1 = document.querySelector("#item"+j+" .cor ")
-        const ano1 = document.querySelector("#item"+j+" .ano ")
-        const motor1 = document.querySelector("#item"+j+" .motor ")
-        const cambio1 = document.querySelector("#item"+j+" .cambio ")
+    fetch("js/dados.json")
+        .then(resposta => resposta.json())
+        .then(dados => {
+            for(let i = -1; i <= 6; i++){
+                let j = (i+1).toString();
+                const imgs1 = document.querySelector("#item"+j+" img")
+                const h2s1 = document.querySelector("#item"+j+" h2")
+                const marca1 = document.querySelector("#item"+j+" .marca")
+                const versao1 = document.querySelector("#item"+j+" .versao")
+                const cor1 = document.querySelector("#item"+j+" .cor")
+                const ano1 = document.querySelector("#item"+j+" .ano")
+                const motor1 = document.querySelector("#item"+j+" .motor")
+                const cambio1 = document.querySelector("#item"+j+" .cambio")
 
-        if (imgs1 && img[n + i]) {
-            imgs1.src = img[n + i];
-            h2s1.textContent = nome[n+i]
-            marca1.textContent = "Marca: "+marca[n+i]
-            versao1.textContent = "Versão: "+versao[n]
-            cor1.textContent = "Cor: "+cor[n]
-            ano1.textContent = "Ano: "+ano[n]
-            motor1.textContent = "Motorização: "+motor[n]
-            cambio1.textContent = "Cambio:  "+cambio[n]
-        }
-    }
-
-    
-
+                if (imgs1 && dados.img[n + i]) {
+                    imgs1.src = dados.img[n + i];
+                    h2s1.textContent = dados.nome[n+i]
+                    marca1.textContent = "Marca: "+dados.marca[n+i]
+                    versao1.textContent = "Versão: "+dados.versao[n+i]
+                    cor1.textContent = "Cor: "+dados.cor[n+i]
+                    ano1.textContent = "Ano: "+dados.ano[n+i]
+                    motor1.textContent = "Motorização: "+dados.motor[n+i]
+                    cambio1.textContent = "Cambio:  "+dados.cambio[n+i]
+                }
+            }
+        })
 }
 
 elementos()
 
-/*const imgs1 = document.querySelector("#item1 img")
-const imgs2 = document.querySelector("#item2 img")
-const imgs3 = document.querySelector("#item3 img")
-const imgs4 = document.querySelector("#item4 img")
-const imgs5 = document.querySelector("#item5 img")
-const imgs6 = document.querySelector("#item6 img")
-imgs1.src = img[n];
-imgs2.src = img[n+1];
-imgs3.src = img[n+2];
-imgs4.src = img[n+3];
-imgs5.src = img[n+4];
-imgs6.src = img[n+5];*/
-
-/*const h2s1 = document.querySelector("#item1 h2")
-const h2s2 = document.querySelector("#item2 h2")
-const h2s3 = document.querySelector("#item3 h2")
-const h2s4 = document.querySelector("#item4 h2")
-const h2s5 = document.querySelector("#item5 h2")
-const h2s6 = document.querySelector("#item6 h2")
-h2s1.textContent = nome[n]
-h2s2.textContent = nome[n+1]
-h2s3.textContent = nome[n+2]
-h2s4.textContent = nome[n+3]
-h2s5.textContent = nome[n+4]
-h2s6.textContent = nome[n+5]*/
-
-/*const marca1 = document.querySelector("#item1 .marca ")
-const marca2 = document.querySelector("#item2 .marca ")
-const marca3 = document.querySelector("#item3 .marca ")
-const marca4 = document.querySelector("#item4 .marca ")
-const marca5 = document.querySelector("#item5 .marca ")
-const marca6 = document.querySelector("#item6 .marca ")
-marca1.textContent = "Marca: "+marca[n]
-marca2.textContent = "Marca: "+marca[n+1]
-marca3.textContent = "Marca: "+marca[n+2]
-marca4.textContent = "Marca: "+marca[n+3]
-marca5.textContent = "Marca: "+marca[n+4]
-marca6.textContent = "Marca: "+marca[n+5]
-
-const versao1 = document.querySelector("#item1 .versao ")
-const versao2 = document.querySelector("#item2 .versao ")
-const versao3 = document.querySelector("#item3 .versao ")
-const versao4 = document.querySelector("#item4 .versao ")
-const versao5 = document.querySelector("#item5 .versao ")
-const versao6 = document.querySelector("#item6 .versao ")
-versao1.textContent = "Versão: "+versao[n]
-versao2.textContent = "Versão: "+versao[n+1]
-versao3.textContent = "Versão: "+versao[n+2]
-versao4.textContent = "Versão: "+versao[n+3]
-versao5.textContent = "Versão: "+versao[n+4]
-versao6.textContent = "Versão: "+versao[n+5]
-
-const cor1 = document.querySelector("#item1 .cor ")
-const cor2 = document.querySelector("#item2 .cor ")
-const cor3 = document.querySelector("#item3 .cor ")
-const cor4 = document.querySelector("#item4 .cor ")
-const cor5 = document.querySelector("#item5 .cor ")
-const cor6 = document.querySelector("#item6 .cor ")
-cor1.textContent = "Cor: "+cor[n]
-cor2.textContent = "Cor: "+cor[n+1]
-cor3.textContent = "Cor: "+cor[n+2]
-cor4.textContent = "Cor: "+cor[n+3]
-cor5.textContent = "Cor: "+cor[n+4]
-cor6.textContent = "Cor: "+cor[n+5]
-
-const ano1 = document.querySelector("#item1 .ano ")
-const ano2 = document.querySelector("#item2 .ano ")
-const ano3 = document.querySelector("#item3 .ano ")
-const ano4 = document.querySelector("#item4 .ano ")
-const ano5 = document.querySelector("#item5 .ano ")
-const ano6 = document.querySelector("#item6 .ano ")
-ano1.textContent = "Ano: "+ano[n]
-ano2.textContent = "Ano: "+ano[n+1]
-ano3.textContent = "Ano: "+ano[n+2]
-ano4.textContent = "Ano: "+ano[n+3]
-ano5.textContent = "Ano: "+ano[n+4]
-ano6.textContent = "Ano: "+ano[n+5]
-
-const motor1 = document.querySelector("#item1 .motor ")
-const motor2 = document.querySelector("#item2 .motor ")
-const motor3 = document.querySelector("#item3 .motor ")
-const motor4 = document.querySelector("#item4 .motor ")
-const motor5 = document.querySelector("#item5 .motor ")
-const motor6 = document.querySelector("#item6 .motor ")
-motor1.textContent = "Motorização: "+motor[n]
-motor2.textContent = "Motorização: "+motor[n+1]
-motor3.textContent = "Motorização: "+motor[n+2]
-motor4.textContent = "Motorização: "+motor[n+3]
-motor5.textContent = "Motorização: "+motor[n+4]
-motor6.textContent = "Motorização: "+motor[n+5]
-
-const cambio1 = document.querySelector("#item1 .cambio ")
-const cambio2 = document.querySelector("#item2 .cambio ")
-const cambio3 = document.querySelector("#item3 .cambio ")
-const cambio4 = document.querySelector("#item4 .cambio ")
-const cambio5 = document.querySelector("#item5 .cambio ")
-const cambio6 = document.querySelector("#item6 .cambio ")
-cambio1.textContent = "Cambio:  "+cambio[n]
-cambio2.textContent = "Cambio:  "+cambio[n+1]
-cambio3.textContent = "Cambio:  "+cambio[n+2]
-cambio4.textContent = "Cambio:  "+cambio[n+3]
-cambio5.textContent = "Cambio:  "+cambio[n+4]
-cambio6.textContent = "Cambio:  "+cambio[n+5]*/
-
-   function proxPagina(){
-    console.log(img[n]);
-    console.log(n);
-    n = n+6;
-    if (n >= img.length){
-        n = 0
-    }
-
-    elementos()
-
-    /*imgs1.src = img[n];
-    imgs2.src = img[n+1];
-    imgs3.src = img[n+2];
-    imgs4.src = img[n+3];
-    imgs5.src = img[n+4];
-    imgs6.src = img[n+5];
-
-    h2s1.textContent = nome[n]
-    h2s2.textContent = nome[n+1]
-    h2s3.textContent = nome[n+2]
-    h2s4.textContent = nome[n+3]
-    h2s5.textContent = nome[n+4]
-    h2s6.textContent = nome[n+5]
-
-    marca1.textContent = "Marca: "+marca[n]
-    marca2.textContent = "Marca: "+marca[n+1]
-    marca3.textContent = "Marca: "+marca[n+2]
-    marca4.textContent = "Marca: "+marca[n+3]
-    marca5.textContent = "Marca: "+marca[n+4]
-    marca6.textContent = "Marca: "+marca[n+5]
-
-    versao1.textContent = "Versão: "+versao[n]
-    versao2.textContent = "Versão: "+versao[n+1]
-    versao3.textContent = "Versão: "+versao[n+2]
-    versao4.textContent = "Versão: "+versao[n+3]
-    versao5.textContent = "Versão: "+versao[n+4]
-    versao6.textContent = "Versão: "+versao[n+5]
-
-    cor1.textContent = "Cor: "+cor[n]
-    cor2.textContent = "Cor: "+cor[n+1]
-    cor3.textContent = "Cor: "+cor[n+2]
-    cor4.textContent = "Cor: "+cor[n+3]
-    cor5.textContent = "Cor: "+cor[n+4]
-    cor6.textContent = "Cor: "+cor[n+5]
-    
-    ano1.textContent = "Ano: "+ano[n]
-    ano2.textContent = "Ano: "+ano[n+1]
-    ano3.textContent = "Ano: "+ano[n+2]
-    ano4.textContent = "Ano: "+ano[n+3]
-    ano5.textContent = "Ano: "+ano[n+4]
-    ano6.textContent = "Ano: "+ano[n+5]
-
-    motor1.textContent = "Motorização: "+motor[n]
-    motor2.textContent = "Motorização: "+motor[n+1]
-    motor3.textContent = "Motorização: "+motor[n+2]
-    motor4.textContent = "Motorização: "+motor[n+3]
-    motor5.textContent = "Motorização: "+motor[n+4]
-    motor6.textContent = "Motorização: "+motor[n+5]
-
-    cambio1.textContent = "Cambio:  "+cambio[n]
-    cambio2.textContent = "Cambio:  "+cambio[n+1]
-    cambio3.textContent = "Cambio:  "+cambio[n+2]
-    cambio4.textContent = "Cambio:  "+cambio[n+3]
-    cambio5.textContent = "Cambio:  "+cambio[n+4]
-    cambio6.textContent = "Cambio:  "+cambio[n+5]*/
-
+function proxPagina(){
+    fetch("js/dados.json")
+        .then(resposta => resposta.json())
+        .then(dados => {
+            console.log(dados.img[n]);
+            console.log(n);
+            n = n+6;
+            if (n >= dados.img.length){
+                n = 0
+            }
+            elementos()
+        })
 }
 function antPagina(){
-    console.log(img[n]);
-    console.log(n);
-    n = n-6;
-    if (n <= -1){
-        n = img.length - 1
+    fetch("js/dados.json")
+        .then(resposta => resposta.json())
+        .then(dados => {
+            console.log(dados.img[n]);
+            console.log(n);
+            n = n-6;
+            if (n <= -1){
+                n = dados.img.length - (dados.img.length % 6)
+            }
+            elementos()
+        })
+}
+function abrirModal() {
+    document.getElementById("fundo").style.display = "flex";
     }
-    /*imgs1.src = img[n];
-    imgs2.src = img[n+1];
-    imgs3.src = img[n+2];
-    imgs4.src = img[n+3];
-    imgs5.src = img[n+4];
-    imgs6.src = img[n+5];*/
 
-    elementos()
-
-    /*h2s1.textContent = nome[n]
-    h2s2.textContent = nome[n+1]
-    h2s3.textContent = nome[n+2]
-    h2s4.textContent = nome[n+3]
-    h2s5.textContent = nome[n+4]
-    h2s6.textContent = nome[n+5]
-
-    versao1.textContent = "versao: "+versao[n]
-    versao2.textContent = "versao: "+versao[n+1]
-    versao3.textContent = "versao: "+versao[n+2]
-    versao4.textContent = "versao: "+versao[n+3]
-    versao5.textContent = "versao: "+versao[n+4]
-    versao6.textContent = "versao: "+versao[n+5]
-
-    cor1.textContent = "Cor: "+cor[n]
-    cor2.textContent = "Cor: "+cor[n+1]
-    cor3.textContent = "Cor: "+cor[n+2]
-    cor4.textContent = "Cor: "+cor[n+3]
-    cor5.textContent = "Cor: "+cor[n+4]
-    cor6.textContent = "Cor: "+cor[n+5]
-
-    ano1.textContent = "Ano: "+ano[n]
-    ano2.textContent = "Ano: "+ano[n+1]
-    ano3.textContent = "Ano: "+ano[n+2]
-    ano4.textContent = "Ano: "+ano[n+3]
-    ano5.textContent = "Ano: "+ano[n+4]
-    ano6.textContent = "Ano: "+ano[n+5]
-
-    motor1.textContent = "Motorização: "+motor[n]
-    motor2.textContent = "Motorização: "+motor[n+1]
-    motor3.textContent = "Motorização: "+motor[n+2]
-    motor4.textContent = "Motorização: "+motor[n+3]
-    motor5.textContent = "Motorização: "+motor[n+4]
-    motor6.textContent = "Motorização: "+motor[n+5]
-
-    cambio1.textContent = "Cambio:  "+cambio[n]
-    cambio2.textContent = "Cambio:  "+cambio[n+1]
-    cambio3.textContent = "Cambio:  "+cambio[n+2]
-    cambio4.textContent = "Cambio:  "+cambio[n+3]
-    cambio5.textContent = "Cambio:  "+cambio[n+4]
-    cambio6.textContent = "Cambio:  "+cambio[n+5]*/
-
+function fecharModal() {
+    document.getElementById("fundo").style.display = "none";
 }
