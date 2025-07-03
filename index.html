@@ -27,7 +27,7 @@
             <div id="item1" class = item>
                 <img id = img1 src="img/download.jpeg">
                 <div class="sobre">
-                    <h2>Gol 1.0</h2>
+                    <h2>Gol</h2>
                     <div class=desc>
                         <div class= box>
                             <p class = marca>Marca: Volkswagen</p>
@@ -45,7 +45,7 @@
             <div id="item2" class = item>
                 <img id = img2 src="img/images.jpeg">
                 <div class="sobre">
-                    <h2>Gol 1.0</h2>
+                    <h2></h2>
                     <div class=desc>
                         <div class= box>
                             <p class = marca>Marca: </p>
@@ -63,7 +63,7 @@
             <div id="item3" class = item>
                 <img src="img/download.jpeg">
                 <div class="sobre">
-                    <h2>Gol 1.0</h2>
+                    <h2></h2>
                     <div class=desc>
                         <div class= box>
                             <p class = marca>Marca: </p>
@@ -81,7 +81,7 @@
             <div id="item4" class = item>
                 <img src="img/download.jpeg">
                 <div class="sobre">
-                    <h2>Gol 1.0</h2>
+                    <h2></h2>
                     <div class=desc>
                         <div class= box>
                             <p class = marca>Marca: </p>
@@ -99,7 +99,7 @@
             <div id="item5" class = item>
                 <img src="img/download.jpeg">
                 <div class="sobre">
-                    <h2>Gol 1.0</h2>
+                    <h2></h2>
                     <div class=desc>
                         <div class= box>
                             <p class = marca>Marca: </p>
@@ -117,7 +117,7 @@
             <div id="item6" class = item>
                 <img src="img/download.jpeg">
                 <div class="sobre">
-                    <h2>Gol 1.0</h2>
+                    <h2></h2>
                     <div class=desc>
                         <div class= box>
                             <p class = marca>Marca: </p>
@@ -138,25 +138,25 @@
     <div id= fundo class= fundo>
         <div class="modal">
             <h2>Adicionar</h2>
-            <img id = imgAdd src="img/sombra.png">
+            <img id="imgAdd" src="img/sombra.png">
             <h4>Digite as informações do veiculo:</h4>
             <P>Imagem:</P>
-            <input type="file" id="inputArquivo" />
+            <input type="text" id="addImg"/>
             <p>Nome: </p>
-            <input>
+            <input type="text" id =addNome>
             <p>Marca: </p>
-            <input>
+            <input type="text" id =addMarca>
             <p>Versão: </p>
-            <input>
+            <input type="text" id =addVersao>
             <p>Cor: </p>
-            <input>
+            <input type="text" id =addCor>
             <p>Ano: </p>
-            <input>
+            <input type="text" id =addAno>
             <p>Motorização: </p>
-            <input>
+            <input type="text" id =addMotor>
             <p>Cambio: </p>
-            <input><br>
-            <button id = add onclick="adicionar()">Adicionar</button>
+            <input type="text" id =addCambio><br>
+            <button id = add onclick=adicionar()>Adicionar</button>
             <button id = sair onclick = fecharModal()>X</button>
         </div>
     </div>
