@@ -66,7 +66,7 @@ main{
 }
 .item{
     border-bottom: 1px solid grey;
-    height: 10%;
+    height: 100%;
     display: flex;
 }
 div img{
@@ -117,7 +117,6 @@ div img{
     border-radius: 10px;
     max-width: 400px;
     width: 90%;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
     position: relative;
     line-height: 0px;
 }
@@ -138,4 +137,7 @@ div img{
     font-size: 20px;
     border: red;
     border-radius: 1000px;
+}
+div{
+    border: 1px solid red;
 }

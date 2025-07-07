@@ -5,7 +5,7 @@ function elementos(){
     fetch("js/dados.json")
         .then(resposta => resposta.json())
         .then(dados => {
-            for(let i = -1; i <= 6; i++){
+            for(let i = 0; i <= 6; i++){
                 let j = (i+1).toString();
                 const imgs1 = document.querySelector("#item"+j+" img")
                 const h2s1 = document.querySelector("#item"+j+" h2")
@@ -36,8 +36,6 @@ function proxPagina(){
     fetch("js/dados.json")
         .then(resposta => resposta.json())
         .then(dados => {
-            console.log(dados.img[n]);
-            console.log(n);
             n = n+6;
             if (n >= dados.img.length){
                 n = 0
@@ -49,8 +47,6 @@ function antPagina(){
     fetch("js/dados.json")
         .then(resposta => resposta.json())
         .then(dados => {
-            console.log(dados.img[n]);
-            console.log(n);
             n = n-6;
             if (n <= -1){
                 n = dados.img.length - (dados.img.length % 6)
